@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Toy World - Cart</title>
+    <link rel="stylesheet" href="cart.css">
+ </head>
+    <body>
+        <h1>Your Cart 🛒</h1>
+        <div id="cart-items"></div>
+        <h2 id="total"></h2>
+        <a href="product.html">⬅ Back to Products</a>
+        <script>
+        function loadCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartContainer = document.getElementById("cart-items");
+        let total = 0;
+        if (cart.length === 0) {
+          cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+        } else {
+          cartContainer.innerHTML = "";
+          cart.forEach((item, index) => {
+            total += item.price;
+            cartContainer.innerHTML += `
+              <div>
+                ${item.name} - $${item.price} 
+                <button onclick="removeItem(${index})">Remove</button>
+                
+              </div>
+              <button onclick="window.location.href='checkout.html'">View Details</button>
+            `;
+          });
+        }
+
+        document.getElementById("total").innerText = "Total: $" + total;
+      }
+      function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1); // remove 1 item at given index
+        localStorage.setItem("cart", JSON.stringify(cart)); // save back
+        loadCart(); 
+      }
+
+      loadCart();
+       </script>
+
+    </body>
+</html>

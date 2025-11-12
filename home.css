@@ -1,0 +1,79 @@
+body{
+    background-color: rgb(234, 143, 143);
+}
+.banner{
+    font-style: italic;
+    color: rgb(179, 41, 87);
+    text-align: center;
+     padding: 100px 20px
+}
+.banner h1{
+     font-size: 3em;
+      margin: 0;
+
+}
+.banner p{
+    font-size: 1.3em;
+}
+.categories {
+      text-align: center;
+      padding:5px 5px;
+    }
+    .categories h2 {
+      margin-bottom: 20px;
+    }
+    .category-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .category {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      background: #ffe0b2;
+    }
+    .products {
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+ .product {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 15px;
+      }
+      .product h3 {
+        margin: 10px 0 5px;
+        color: #333;
+      }
+      .product p {
+        color: #ff6f61;
+        font-size: 18px;
+        margin: 5px 0 10px;
+      }
+      .product button {
+        background: #ff6f61;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .product button:hover {
+        background: #e85b50;
+      }

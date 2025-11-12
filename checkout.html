@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toy World - Cart</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <h1>Checkout 🛍️</h1>
+     <div id="order-summary"></div>
+     <form id="checkout-forms">
+    <h2>Customer Details</h2>
+     <label for="name">Full Name:</label>
+      <input type="text" id="name" required><br><br>
+       <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+      <label for="address">Address:</label><br>
+      <textarea id="address" rows="3" required></textarea><br><br>
+      <label for="payment">Payment Method:</label>
+       <select id="payment" required>
+        <option value="card">Credit/Debit Card</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="upi">UPI</option>
+      </select><br><br>
+
+      <button type="submit">Confirm Order</button>
+       </form>
+     <a href="cart.html">⬅ Back to Cart</a>
+     
+    
+     <script>
+      function loadOrderSummary() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let orderDiv = document.getElementById("order-summary");
+        let total = 0;
+
+        if (cart.length === 0) {
+          orderDiv.innerHTML = "<p>Your cart is empty!</p>";
+        } else {
+          orderDiv.innerHTML = "<h2>Order Summary</h2>";
+          cart.forEach(item => {
+            let price = Number(item.price) || 0;
+            total += price;
+            orderDiv.innerHTML += `<p>${item.name} - $${price}</p>`;
+          });
+          orderDiv.innerHTML += `<h3>Total: $${total}</h3>`;
+        }
+      }
+        document.getElementById("checkout-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("🎉 Thank you, " + document.getElementById("name").value + "! Your order has been placed successfully.");
+        localStorage.removeItem("cart");
+      
+      });
+      
+       loadOrderSummary();
+       </script>
+        <button onclick="window.location.href='thankyou.html'" class="btn2">Checkout</button>
+    </body>
+</html>

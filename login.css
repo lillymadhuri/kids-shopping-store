@@ -1,0 +1,72 @@
+.row{
+    display: flex;
+    justify-content: space-around;
+   background-color: rgb(234, 143, 143);
+    padding: 10x;
+}
+.wrapleft{
+    background-color: rgb(234, 143, 143);
+    width: 1000px;
+    height: 600px;
+}
+.wrapright{
+    background-color: rgb(234, 143, 143);
+    width:  1000px;
+    height: 700px;
+}
+.welcome{
+    font-style: italic;
+    font-size: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.form{
+    padding: 5px;
+    margin-bottom: 50px;
+    width: 600px;
+}
+.account{
+    font-style: oblique;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+
+}
+.text1{
+    color: rgb(179, 41, 87);
+    color: rgb(179, 41, 87);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.pass{
+    color: rgb(179, 41, 87);
+    color: rgb(179, 41, 87);
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+.check{
+    color: rgb(179, 41, 87);
+    color: rgb(179, 41, 87);
+    margin-top: 30px;
+     margin-left: 60px;
+    padding: 20px;
+
+
+}
+.btn1{
+    color: rgb(179, 41, 87);
+     background-color: white;
+     width: 300px;
+     border-radius: 50px;
+     margin-left: 50px;
+     margin-top:  30px;
+}
+
+.one{
+     margin-left: 0px;
+    margin-top: 0px;
+    width: 600px;
+    height: 600px;
+}
